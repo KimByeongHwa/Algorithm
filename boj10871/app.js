@@ -3,10 +3,11 @@ let input = require('fs').readFileSync(filePath).toString().trim().split('\n');
 
 let N = Math.floor(input[0].split(' ')[0]);
 let X = Math.floor(input[0].split(' ')[1]);
-let A = [];
-for(let i=0; i<N; i++){
-    A[i] = input[1].split(' ')[i];
-}
+let A = input[1].split(' ');
+// let Anum = [];
+// for(let i=0; i<N; i++){
+//     Anum[i] = Math.floor(A[i]);
+// }
 
 let lowA = new Array();
 for(let i = 0; i<N; i++){
