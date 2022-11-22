@@ -1,14 +1,17 @@
-let input = require('fs').readFileSync('input.txt').toString();
+const filePath = process.platform === 'linux' ? '/dev/stdin' : 'input.txt';
+let input = require('fs').readFileSync(filePath).toString().trim().split('\n');
 
-let num = +input[0];
+let N = Number(input[0]);
 
-for(let i=0; i<num; i++){
-    let star='';
-    let space='';
-    let result='';
-    for(let j=0; j<i; j++){
-        space += (num-j)*' ';
-       
+for(let i=0; i<N; i++){
+    let space = '';
+    let star = '*';
+    for(let a=0; a<i; a++){
+        star += '*';
     }
-    console.log(result);
+    for(let b=0; b<N-Number(star.length); b++){
+        space += ' ';
+    }
+    // console.log(space.length);
+    console.log(space + star);
 }
